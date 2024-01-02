@@ -1,0 +1,131 @@
+{
+  "kind": "collectionType",
+  "collectionName": "properties",
+  "info": {
+    "singularName": "property",
+    "pluralName": "properties",
+    "displayName": "Property Details",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "address": {
+      "type": "text",
+      "required": true
+    },
+    "pincode": {
+      "type": "integer",
+      "required": true
+    },
+    "city": {
+      "type": "string",
+      "required": true
+    },
+    "state": {
+      "type": "string",
+      "required": true
+    },
+    "country": {
+      "type": "string",
+      "required": true
+    },
+    "rating": {
+      "type": "decimal"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "isAvailable": {
+      "type": "boolean",
+      "default": true
+    },
+    "amenities": {
+      "type": "json",
+      "default": {
+        "Parking": {
+          "enabled": true
+        },
+        "Printing": {
+          "enabled": true
+        },
+        "IT services": {
+          "enabled": true
+        },
+        "Server rooms": {
+          "enabled": true
+        },
+        "24/7 security": {
+          "enabled": true
+        },
+        "Mail and package handling": {
+          "enabled": true
+        },
+        "Onsite staff": {
+          "enabled": true
+        },
+        "Cleaning services": {
+          "enabled": true
+        },
+        "Phone booths": {
+          "enabled": true
+        },
+        "Conference rooms": {
+          "enabled": true
+        },
+        "Pantry": {
+          "enabled": true
+        },
+        "Event spaces": {
+          "enabled": true
+        },
+        "Professional and social events": {
+          "enabled": true
+        },
+        "Enhanced cleaning services": {
+          "enabled": true
+        },
+        "Hand sanitizers": {
+          "enabled": true
+        },
+        "Enhanced HVAC standards": {
+          "enabled": true
+        }
+      }
+    },
+    "description": {
+      "type": "text"
+    },
+    "ownedBy": {
+      "type": "string"
+    },
+    "workSpace": {
+      "type": "json",
+      "default": {
+        "available": 0,
+        "total": 0,
+        "cost": 0
+      }
+    },
+    "cost": {
+      "type": "integer"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

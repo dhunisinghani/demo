@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "enquiries",
+  "info": {
+    "singularName": "enquiry",
+    "pluralName": "enquiries",
+    "displayName": "Enquiry",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "phoneNumber": {
+      "type": "biginteger"
+    },
+    "numberOfSeats": {
+      "type": "integer"
+    },
+    "date": {
+      "type": "date"
+    },
+    "userID": {
+      "type": "string"
+    },
+    "propertyID": {
+      "type": "string"
+    },
+    "propertyName": {
+      "type": "string"
+    }
+  }
+}

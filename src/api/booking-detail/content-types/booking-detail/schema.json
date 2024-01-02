@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "booking_details",
+  "info": {
+    "singularName": "booking-detail",
+    "pluralName": "booking-details",
+    "displayName": "Booking Details",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "bookedOn": {
+      "type": "datetime"
+    },
+    "start": {
+      "type": "datetime"
+    },
+    "end": {
+      "type": "datetime"
+    },
+    "totalSeats": {
+      "type": "integer"
+    },
+    "userID": {
+      "type": "string"
+    },
+    "propertyID": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "decimal"
+    }
+  }
+}
