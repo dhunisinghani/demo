@@ -32,6 +32,7 @@ module.exports = createCoreController('api::property.property', ({strapi}) =>({
        
        
     },
+    
     async getPropertyListUser(ctx) {
         try {
             
