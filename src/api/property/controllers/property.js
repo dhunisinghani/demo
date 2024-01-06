@@ -31,5 +31,31 @@ module.exports = createCoreController('api::property.property', ({strapi}) =>({
        }
        
        
+    },
+    async getPropertyListUser(ctx) {
+        try {
+            
+            let userId = ctx.request.params.id;
+            let user = await strapi.service('plugin::users-permissions.user').fetch(userId);
+            if (user) {
+                let properties = await strapi.service('api::property.property').find({filters:{ownedBy:userId}, populate:["images"]})
+                return ctx.body = {
+                    success: true,
+                    data: properties,
+                }
+            }
+
+            return ctx.send({
+                success: false,
+                message: "No Such User Found"
+            }, 400)
+            
+        } catch (error) {
+          console.error(error);
+          ctx.body = {
+            success: false,
+            message: error.message
+          }   
+        }
     }
 }));
