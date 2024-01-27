@@ -11,7 +11,7 @@ module.exports = createCoreController('api::booking-detail.booking-detail', ({ s
     async book(ctx) {
         try {
 
-            let { data } = ctx.request.body;
+            const data = ctx.request.body;
             const user = await strapi.service('plugin::users-permissions.user').fetch(data.userID);
             if (user === null) {
                 throw new Error("No Such User");
