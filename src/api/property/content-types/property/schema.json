@@ -16,6 +16,14 @@
       "type": "string",
       "required": true
     },
+    "latitude": {
+      "type": "float",
+      "required": true
+    },
+    "longitude": {
+      "type": "float",
+      "required": true
+    },
     "address": {
       "type": "text",
       "required": true
@@ -116,9 +124,8 @@
     "workSpace": {
       "type": "json",
       "default": {
-        "available": 0,
-        "total": 0,
-        "cost": 0
+        "available": 250,
+        "total": 250
       }
     },
     "cost": {
