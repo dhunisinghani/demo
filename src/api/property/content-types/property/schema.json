@@ -65,52 +65,36 @@
     "amenities": {
       "type": "json",
       "default": {
+        "Pantry": {
+          "icon": "restaurant_icon",
+          "enabled": true
+        },
         "Parking": {
-          "enabled": true
-        },
-        "Printing": {
-          "enabled": true
-        },
-        "IT services": {
-          "enabled": true
-        },
-        "Server rooms": {
-          "enabled": true
-        },
-        "24/7 security": {
-          "enabled": true
-        },
-        "Mail and package handling": {
+          "icon": "local_parking_icon",
           "enabled": true
         },
         "Onsite staff": {
-          "enabled": true
-        },
-        "Cleaning services": {
+          "icon": "people_icon",
           "enabled": true
         },
         "Phone booths": {
+          "icon": "phone_icon",
+          "enabled": true
+        },
+        "Server rooms": {
+          "icon": "dns_icon",
+          "enabled": true
+        },
+        "24/7 security": {
+          "icon": "security_icon",
           "enabled": true
         },
         "Conference rooms": {
+          "icon": "meeting_room_icon",
           "enabled": true
         },
-        "Pantry": {
-          "enabled": true
-        },
-        "Event spaces": {
-          "enabled": true
-        },
-        "Professional and social events": {
-          "enabled": true
-        },
-        "Enhanced cleaning services": {
-          "enabled": true
-        },
-        "Hand sanitizers": {
-          "enabled": true
-        },
-        "Enhanced HVAC standards": {
+        "Cleaning services": {
+          "icon": "cleaning_services_icon",
           "enabled": true
         }
       }
