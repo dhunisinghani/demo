@@ -32,6 +32,15 @@
     },
     "amount": {
       "type": "decimal"
+    },
+    "email": {
+      "type": "email"
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "fullName": {
+      "type": "string"
     }
   }
 }

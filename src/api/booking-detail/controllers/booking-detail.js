@@ -7,7 +7,7 @@
 const { createCoreController } = require('@strapi/strapi').factories;
 
 module.exports = createCoreController('api::booking-detail.booking-detail', ({ strapi }) => ({
-    
+
     async book(ctx) {
         try {
 
@@ -30,7 +30,7 @@ module.exports = createCoreController('api::booking-detail.booking-detail', ({ s
                     total: workSpace.total,
                 }
 
-                let updatedProperty = await strapi.service('api::property.property').update(data.propertyID,{data:{ workSpace: newWorkSpace} });
+                let updatedProperty = await strapi.service('api::property.property').update(data.propertyID, { data: { workSpace: newWorkSpace } });
             } else {
                 throw new Error(`${data.totalSeats} seats Not available`);
             }
@@ -44,6 +44,7 @@ module.exports = createCoreController('api::booking-detail.booking-detail', ({ s
             };
 
         } catch (error) {
+            console.dir(error, { depth: 5 });
             ctx.send({
                 success: false,
                 error: error.message
@@ -51,24 +52,31 @@ module.exports = createCoreController('api::booking-detail.booking-detail', ({ s
         }
     },
 
-    async getBookingByUserID(ctx) {
+    async getBookingsByUserID(ctx) {
         try {
-            let result = await strapi.service('api::booking-detail.booking-detail').find({filters:{userID: ctx.request.params.id}});
+
+            const res = await strapi.service('api::booking-detail.booking-detail').find({ filters: { userID: ctx.request.params.id } });
+            const { results } = res;
+            for (let [index, result] of results.entries()) {
+                results[index].propertyDetails = await strapi.service('api::property.property').findOne(result.propertyID, { populate: ["images"] });
+            }
+            // console.log(results);
             ctx.body = {
                 success: true,
-                data: result
+                data: results,
             };
         } catch (error) {
+            console.error(error)
             ctx.send({
                 success: false,
                 error: error.message
-            },500)
+            }, 500)
         }
     },
 
-    async getBookingByPropertyID(ctx) {
+    async getBookingsByPropertyID(ctx) {
         try {
-            let result = await strapi.service('api::booking-detail.booking-detail').find({filters:{propertyID: ctx.request.params.id}});
+            let result = await strapi.service('api::booking-detail.booking-detail').find({ filters: { propertyID: ctx.request.params.id } });
             ctx.body = {
                 success: true,
                 data: result
@@ -77,7 +85,7 @@ module.exports = createCoreController('api::booking-detail.booking-detail', ({ s
             ctx.send({
                 success: false,
                 error: error.message
-            },500)
+            }, 500)
         }
     },
 

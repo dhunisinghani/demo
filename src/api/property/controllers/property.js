@@ -8,7 +8,7 @@ const { createCoreController } = require('@strapi/strapi').factories;
 
 module.exports = createCoreController('api::property.property', ({ strapi }) => ({
     async create(ctx) {
-        console.dir(ctx.request.files, { depth: 5 })
+        // console.dir(ctx.request.files, { depth: 5 })
         try {
             let resp = await strapi.service("api::property.property").create({
                 data: {

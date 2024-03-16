@@ -22,7 +22,7 @@ module.exports = {
         {
             method: "GET",
             path:"/bookings/user/:id",
-            handler:"booking-detail.getBookingByUserID",
+            handler:"booking-detail.getBookingsByUserID",
             config: {
                 auth: false,
             }
@@ -30,7 +30,7 @@ module.exports = {
         {
             method: "GET",
             path:"/bookings/property/:id",
-            handler:"booking-detail.getBookingByPropertyID",
+            handler:"booking-detail.getBookingsByPropertyID",
             config: {
                 auth: false,
             }
