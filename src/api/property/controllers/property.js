@@ -8,6 +8,7 @@ const { createCoreController } = require('@strapi/strapi').factories;
 
 module.exports = createCoreController('api::property.property', ({ strapi }) => ({
     async create(ctx) {
+        // console.dir(ctx.request.body)
         // console.dir(ctx.request.files, { depth: 5 })
         try {
             let resp = await strapi.service("api::property.property").create({
@@ -24,9 +25,11 @@ module.exports = createCoreController('api::property.property', ({ strapi }) => 
             })
             ctx.body = {
                 success: true,
-                message: "Property added Successfully"
+                message: "Property added Successfully",
+                data: resp
             }
         } catch (error) {
+            // console.dir(error, {depth: 5});
             ctx.body = {
                 success: false,
                 message: "Failed to add Property"
